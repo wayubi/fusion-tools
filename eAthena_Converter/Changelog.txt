@@ -1,6 +1,8 @@
 --------------------------------------------------------------------------------
  eAthena -> Fusion Converter 1.000
 --------------------------------------------------------------------------------
+- 2004-05-25: Completed reading of pet.txt into memory array. [AlexKreuz]
+- 2004-05-25: Completed reading of storage.txt into memory array. [AlexKreuz]
 - 2004-05-21: Completed reading of guild.txt into memory array. [AlexKreuz]
 - 2004-05-20: Completed reading of party.txt into memory array. [AlexKreuz]
 - 2004-05-20: Completed reading of athena.txt into memory array. [AlexKreuz]

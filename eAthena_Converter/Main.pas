@@ -15,6 +15,8 @@ type
     procedure eAthena_athena ();
     procedure eAthena_party ();
     procedure eAthena_guild ();
+    procedure eAthena_pet ();
+    procedure eAthena_storage ();
 
     procedure Button1Click(Sender: TObject);
   private
@@ -31,6 +33,8 @@ var
   athena : array[Word] of array[0..18] of string;
   party : array[Word] of array[0..26] of string;
   guild : array[Word] of array[0..121] of string;
+  pet : array[Word] of array[0..1] of string;
+  storage : array[Word] of array[0..1] of string;
 
 implementation
 
@@ -157,12 +161,73 @@ begin
     sl.Free;
 end;
 
+procedure TForm1.eAthena_pet ();
+var
+    sl : TStringList;
+    txt : TextFile;
+    i, j : Integer;
+begin
+    sl := TStringList.Create;
+    sl.Delimiter := '¦';
+
+    AssignFile(txt, 'eAthena/pet.txt');
+    Reset(txt);
+
+    i := -1;
+    while not eof(txt) do begin
+        sl.Clear;
+        Readln(txt, str);
+        str := stringreplace(str, chr(9), '¦', [rfReplaceAll, rfIgnoreCase]);
+        str := stringreplace(str, ' ', '¨', [rfReplaceAll, rfIgnoreCase]);
+        sl.DelimitedText := str;
+
+        for j := 0 to (sl.Count - 1) do begin
+            i := i + 1;
+            pet[i,j] := stringreplace(sl.Strings[j], '¨', ' ', [rfReplaceAll, rfIgnoreCase]);
+        end;
+    end;
+
+    sl.Free;
+end;
+
+procedure TForm1.eAthena_storage ();
+var
+    sl : TStringList;
+    txt : TextFile;
+    i, j : Integer;
+begin
+    sl := TStringList.Create;
+    sl.Delimiter := '¦';
+
+    AssignFile(txt, 'eAthena/storage.txt');
+    Reset(txt);
+
+    i := -1;
+    while not eof(txt) do begin
+        sl.Clear;
+        Readln(txt, str);
+        str := stringreplace(str, chr(9), '¦', [rfReplaceAll, rfIgnoreCase]);
+        str := stringreplace(str, ' ', '¨', [rfReplaceAll, rfIgnoreCase]);
+        sl.DelimitedText := str;
+
+        for j := 0 to (sl.Count - 2) do begin
+            i := i + 1;
+            storage[i,j] := stringreplace(sl.Strings[j], '¨', ' ', [rfReplaceAll, rfIgnoreCase]);
+        end;
+    end;
+
+    sl.Free;
+end;
+
 procedure TForm1.Button1Click(Sender: TObject);
 begin
     //form1.eAthena_account();
     //form1.eAthena_athena();
     //form1.eAthena_party();
     //form1.eAthena_guild();
+    //form1.eAthena_pet();
+    //form1.eAthena_storage();
+    
 end;
 
 {$R *.dfm}

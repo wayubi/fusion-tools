@@ -132,6 +132,7 @@ begin
 { Tsusai: commented out old map info no longer used in kRO and iRO }
 { Tsusai: added new entry from 7/5 kRO change in resnametable,
   no idea why it's in though... }
+CopyFile(PChar('map\monk_test.gat'), PChar('map\quiz_test.gat'),True);
 CopyFile(PChar('map\valkyrie.gat'), PChar('map\himinn.gat'),True);
 CopyFile(PChar('map\force_map1.gat'), PChar('map\force_1-1.gat'),True);
 CopyFile(PChar('map\force_map2.gat'), PChar('map\force_1-2.gat'),True);

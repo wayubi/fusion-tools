@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, StdCtrls, Controls, Forms,
-  Dialogs, Graphics, MMSystem, ScktComp, List32;
+  Dialogs, Graphics, MMSystem, ScktComp, List32, Zip;
 
 type TBlock = class
 	NPC         :TIntList32;
@@ -79,6 +79,10 @@ var
         FWM :TextFile;
         OUT :TextFile;
 
+        zipfile :TZip;
+        path    :string;
+        animals : TStringList;
+        dir     :string;
 begin
 
         tm := nil;
@@ -109,7 +113,7 @@ begin
 
                         str  := StringReplace(sr.Name, '.gat', '',[rfReplaceAll, rfIgnoreCase]);
 
-                        AssignFile(FWM, 'afm/'+str+'.afm');
+                        AssignFile(FWM, 'afm/'+str+'.out');
                         ReWrite(FWM);
 
                         WriteLn(FWM, 'ADVANCED FUSION MAP');
@@ -159,6 +163,26 @@ begin
                         if checkbox1.Checked then CloseFile(OUT);
                         label1.Caption := 'Conversion Complete';
                         dat.Free;
+
+                        dir := GetCurrentDir;
+
+                        deletefile(dir+'\afm\'+str+'.afm');
+
+                        zipfile := tzip.create(self);
+
+                        zipfile.Filename := dir+'\afm\'+str+'.afm';
+
+                        animals := TStringList.Create;
+                        animals.Add(dir+'\afm\'+str+'.out');
+
+                        zipfile.FileSpecList := animals;
+                        zipfile.Add;
+                        zipfile.Free;
+
+                        deletefile(dir+'\afm\'+str+'.out');
+
+                        animals.Free;
+
 		until FindNext(sr) <> 0;
 		FindClose(sr);
 

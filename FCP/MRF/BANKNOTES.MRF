@@ -1,0 +1,46 @@
+////FILE:data\idnum2itemdesctable.txt////
+50000#
+A Bank Note. Redeemable for 100 Zeny at Bank of Mako locations..
+^ffffff_^000000
+Weight : ^7777770^000000
+#
+50001#
+A Bank Note. Redeemable for 500 Zeny at Bank of Mako locations..
+^ffffff_^000000
+Weight : ^7777770^000000
+#
+50002#
+A Bank Note. Redeemable for 1,000 Zeny at Bank of Mako locations..
+^ffffff_^000000
+Weight : ^7777770^000000
+#
+50003#
+A Bank Note. Redeemable for 5,000 Zeny at Bank of Mako locations..
+^ffffff_^000000
+Weight : ^7777770^000000
+#
+50004#
+A Bank Note. Redeemable for 10,000 Zeny at Bank of Mako locations..
+^ffffff_^000000
+Weight : ^7777770^000000
+#
+50005#
+A Bank Note. Redeemable for 50,000 Zeny at Bank of Mako locations..
+^ffffff_^000000
+Weight : ^7777770^000000
+#
+////FILE:data\idnum2itemdisplaynametable.txt////
+50000#100Z Bank Note#
+50001#500Z Bank Note#
+50002#1,000Z Bank Note#
+50003#5,000Z Bank Note#
+50004#10,000Z Bank Note#
+50005#50,000Z Bank Note#
+////FILE:data\idnum2itemresnametable.txt////
+50000#카프라이용권#
+50001#카프라이용권#
+50002#카프라이용권#
+50003#카프라이용권#
+50004#카프라이용권#
+50005#카프라이용권#
+////END:////

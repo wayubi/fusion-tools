@@ -1,0 +1,14 @@
+	<connection>
+		<display>Mako Server</display>
+		<desc>Mako Server</desc>
+		<address>68.4.216.224</address>
+		<port>44252</port>
+		<version>24</version>
+		<langtype>7</langtype>
+		<registrationweb>http://www.izlude.net</registrationweb>
+		<aid>
+			<admin>100001</admin>
+			<admin>100002</admin>
+			<admin>100003</admin>
+		</aid>
+	</connection>

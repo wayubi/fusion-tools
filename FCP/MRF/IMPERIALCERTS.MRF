@@ -1,0 +1,11 @@
+////FILE:data\idnum2itemdesctable.txt////
+50006#
+A Certificate with the Imperial Seal on it. Given in exchange for service to the Empire.
+^ffffff_^000000
+Weight : ^7777770^000000
+#
+////FILE:data\idnum2itemdisplaynametable.txt////
+50006#Imperial Certificate#
+////FILE:data\idnum2itemresnametable.txt////
+50006#상인영수증#
+////END:////

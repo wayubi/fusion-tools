@@ -1,7 +1,6 @@
 program Project1;
 
 uses
-  madExcept,
   Forms,
   Unit1 in 'Unit1.pas' {Form1};
 

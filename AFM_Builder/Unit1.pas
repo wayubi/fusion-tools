@@ -51,6 +51,7 @@ type TForm1 = class(TForm)
     CheckBox2: TCheckBox;
     CheckBox3: TCheckBox;
     procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
 end;
 
 var
@@ -129,6 +130,7 @@ begin
     //Copies the needed files to create the needed server maps (tsusai)
 
 { Alex: seems like you were missing a few maps, Tsusai }
+{ Tsusai: commented out old map info no longer used in kRO and iRO}
 CopyFile(PChar('map\force_map1.gat'), PChar('map\force_1-1.gat'),True);
 CopyFile(PChar('map\force_map2.gat'), PChar('map\force_1-2.gat'),True);
 CopyFile(PChar('map\force_map3.gat'), PChar('map\force_1-3.gat'),True);
@@ -142,8 +144,8 @@ CopyFile(PChar('map\quiz_01.gat'), PChar('map\guild_room.gat'),True);
 CopyFile(PChar('map\job_hunter.gat'), PChar('map\hunter_1-1.gat'),True);
 CopyFile(PChar('map\job_hunter.gat'), PChar('map\hunter_2-1.gat'),True);
 CopyFile(PChar('map\job_hunter.gat'), PChar('map\hunter_3-1.gat'),True);
-CopyFile(PChar('map\job_prist.gat'), PChar('map\job_cru.gat'),True);
-CopyFile(PChar('map\job_wiz.gat'), PChar('map\job_sage.gat'),True);
+//CopyFile(PChar('map\job_prist.gat'), PChar('map\job_cru.gat'),True);
+//CopyFile(PChar('map\job_wiz.gat'), PChar('map\job_sage.gat'),True);
 CopyFile(PChar('map\job_knight.gat'), PChar('map\knight_1-1.gat'),True);
 CopyFile(PChar('map\job_knight.gat'), PChar('map\knight_2-1.gat'),True);
 CopyFile(PChar('map\job_knight.gat'), PChar('map\knight_3-1.gat'),True);
@@ -151,22 +153,22 @@ CopyFile(PChar('map\new_zone01.gat'), PChar('map\new_1-1.gat'),True);
 CopyFile(PChar('map\new_zone02.gat'), PChar('map\new_1-2.gat'),True);
 CopyFile(PChar('map\new_zone03.gat'), PChar('map\new_1-3.gat'),True);
 CopyFile(PChar('map\new_zone04.gat'), PChar('map\new_1-4.gat'),True);
-CopyFile(PChar('map\new_zone01.gat'), PChar('map\new_2-1.gat'),True);
-CopyFile(PChar('map\new_zone02.gat'), PChar('map\new_2-2.gat'),True);
-CopyFile(PChar('map\new_zone03.gat'), PChar('map\new_2-3.gat'),True);
-CopyFile(PChar('map\new_zone04.gat'), PChar('map\new_2-4.gat'),True);
-CopyFile(PChar('map\new_zone01.gat'), PChar('map\new_3-1.gat'),True);
-CopyFile(PChar('map\new_zone02.gat'), PChar('map\new_3-2.gat'),True);
-CopyFile(PChar('map\new_zone03.gat'), PChar('map\new_3-3.gat'),True);
-CopyFile(PChar('map\new_zone04.gat'), PChar('map\new_3-4.gat'),True);
-CopyFile(PChar('map\new_zone01.gat'), PChar('map\new_4-1.gat'),True);
-CopyFile(PChar('map\new_zone02.gat'), PChar('map\new_4-2.gat'),True);
-CopyFile(PChar('map\new_zone03.gat'), PChar('map\new_4-3.gat'),True);
-CopyFile(PChar('map\new_zone04.gat'), PChar('map\new_4-4.gat'),True);
-CopyFile(PChar('map\new_zone01.gat'), PChar('map\new_5-1.gat'),True);
-CopyFile(PChar('map\new_zone02.gat'), PChar('map\new_5-2.gat'),True);
-CopyFile(PChar('map\new_zone03.gat'), PChar('map\new_5-3.gat'),True);
-CopyFile(PChar('map\new_zone04.gat'), PChar('map\new_5-4.gat'),True);
+//CopyFile(PChar('map\new_zone01.gat'), PChar('map\new_2-1.gat'),True);
+//CopyFile(PChar('map\new_zone02.gat'), PChar('map\new_2-2.gat'),True);
+//CopyFile(PChar('map\new_zone03.gat'), PChar('map\new_2-3.gat'),True);
+//CopyFile(PChar('map\new_zone04.gat'), PChar('map\new_2-4.gat'),True);
+//CopyFile(PChar('map\new_zone01.gat'), PChar('map\new_3-1.gat'),True);
+//CopyFile(PChar('map\new_zone02.gat'), PChar('map\new_3-2.gat'),True);
+//CopyFile(PChar('map\new_zone03.gat'), PChar('map\new_3-3.gat'),True);
+//CopyFile(PChar('map\new_zone04.gat'), PChar('map\new_3-4.gat'),True);
+//CopyFile(PChar('map\new_zone01.gat'), PChar('map\new_4-1.gat'),True);
+//CopyFile(PChar('map\new_zone02.gat'), PChar('map\new_4-2.gat'),True);
+//CopyFile(PChar('map\new_zone03.gat'), PChar('map\new_4-3.gat'),True);
+//CopyFile(PChar('map\new_zone04.gat'), PChar('map\new_4-4.gat'),True);
+//CopyFile(PChar('map\new_zone01.gat'), PChar('map\new_5-1.gat'),True);
+//CopyFile(PChar('map\new_zone02.gat'), PChar('map\new_5-2.gat'),True);
+//CopyFile(PChar('map\new_zone03.gat'), PChar('map\new_5-3.gat'),True);
+//CopyFile(PChar('map\new_zone04.gat'), PChar('map\new_5-4.gat'),True);
 CopyFile(PChar('map\aldeg_cas01.gat'), PChar('map\nguild_alde.gat'),True);
 CopyFile(PChar('map\gefg_cas01.gat'), PChar('map\nguild_gef.gat'),True);
 CopyFile(PChar('map\payg_cas01.gat'), PChar('map\nguild_pay.gat'),True);
@@ -409,6 +411,11 @@ CopyFile(PChar('map\job_wizard.gat'), PChar('map\wizard_3-1.gat'),True);
     end;
 
     label1.Caption := 'Conversion Complete';
+
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
 
 end;
 

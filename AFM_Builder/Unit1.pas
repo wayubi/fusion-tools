@@ -51,7 +51,6 @@ type TForm1 = class(TForm)
     CheckBox2: TCheckBox;
     CheckBox3: TCheckBox;
     procedure Button1Click(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
 end;
 
 var
@@ -130,7 +129,10 @@ begin
     //Copies the needed files to create the needed server maps (tsusai)
 
 { Alex: seems like you were missing a few maps, Tsusai }
-{ Tsusai: commented out old map info no longer used in kRO and iRO}
+{ Tsusai: commented out old map info no longer used in kRO and iRO }
+{ Tsusai: added new entry from 7/5 kRO change in resnametable,
+  no idea why it's in though... }
+CopyFile(PChar('map\valkyrie.gat'), PChar('map\himinn.gat'),True);
 CopyFile(PChar('map\force_map1.gat'), PChar('map\force_1-1.gat'),True);
 CopyFile(PChar('map\force_map2.gat'), PChar('map\force_1-2.gat'),True);
 CopyFile(PChar('map\force_map3.gat'), PChar('map\force_1-3.gat'),True);
@@ -414,11 +416,6 @@ CopyFile(PChar('map\job_wizard.gat'), PChar('map\wizard_3-1.gat'),True);
     end;
 
     label1.Caption := 'Conversion Complete';
-
-end;
-
-procedure TForm1.FormCreate(Sender: TObject);
-begin
 
 end;
 

@@ -37,6 +37,11 @@ type TMapList = class
 	Mode      :byte;
 end;
 
+type TWater = class
+  Name    :string;
+  wh      :integer;
+end;
+
 type TForm1 = class(TForm)
     Button1: TButton;
     CheckBox1: TCheckBox;
@@ -51,7 +56,7 @@ end;
 var
 
 	MapList :TStringList;
-        Form1 :TForm1;
+  Form1 :TForm1;
 
 implementation
 
@@ -60,7 +65,7 @@ implementation
 procedure TForm1.Button1Click(Sender: TObject);
 var
 	    str         :string;
-        dat         :TMemoryStream;
+      dat         :TMemoryStream;
 	    tm          :TMap;
 	    h           :array[0..3] of single;
 	    maptype     :integer;
@@ -70,24 +75,58 @@ var
         xy          :TPoint;
 	    ta	        :TMapList;
 
-        i,j         :integer;
+        i,j,k       :integer;
 
         mapcoord    :array[0..600] of array[0..600] of byte;
 
         FWM         :TextFile;
         OUT         :TextFile;
         AF2         :TextFile;
+        water       :TextFile;
 
         zipfile     :TZip;
         path        :string;
         animals     :TStringList;
+        sl          :TStringList;
         dir         :string;
 
         AppPath     :string;
+        tw          :TWater;
+
 begin
 
-    MapList := nil;
+    MapList := TStringList.Create;
+    sl := TStringList.Create;
     AppPath := GetCurrentDir;
+    // Do we have a water height database?
+    if not (FileExists(AppPath + '\water_db.txt')) then begin
+  		MessageBox(Handle, 'water_db.txt not found.  No water support will be available.', 'Fusion', MB_OK);
+	  end else begin
+
+      // We do?  Load it up and parse it.
+    	AssignFile(water, AppPath + '\water_db.txt');
+    	Reset(water);
+    	Readln(water, str);
+    	while not eof(water) do begin
+    		sl.Clear;
+    		Readln(water, str);
+    		sl.DelimitedText := LowerCase(str);
+        sl[0] := ChangeFileExt(sl[0], '');
+        tw := TWater.Create;
+        with tw do begin
+          Name := sl.Strings[0];
+          if (sl.Count = 1) then begin
+            wh := 3;
+          end else begin
+            wh := StrToInt(sl.Strings[1]);
+          end;
+        end;
+
+        MapList.AddObject(tw.Name, tw);
+
+      end;
+
+    end;
 
     if FindFirst('map\*.gat', $27, sr) = 0 then begin
 		repeat
@@ -102,6 +141,17 @@ begin
 
             str  := StringReplace(sr.Name, '.gat', '',[rfReplaceAll, rfIgnoreCase]);
 
+            // Now, before we begin, let's see if we have water data:
+            i := MapList.IndexOf(str);
+            if i <> -1 then begin
+              tw := MapList.Objects[i] as TWater;
+              k := tw.wh;
+            end else begin
+              // Ludicrously high number denotes no water on the map.
+              // (Ludicrously low number denotes being underwater maybe?)
+              k := 32767;
+            end;
+
             for j := 0 to xy.Y - 1 do begin
                 for i := 0 to xy.X - 1 do begin
 
@@ -111,20 +161,17 @@ begin
                     dat.Read(h[3], 4);
                     dat.Read(maptype, 4);
 
-                    {if (maptype = 0) then begin
-                        if (h[0] > 3) or (h[1] > 3) or (h[2] > 3) or (h[3] > 3) then begin
+                    if (k <> 32767) and (maptype = 0) then begin
+                        if (h[0] > k) or (h[1] > k) or (h[2] > k) or (h[3] > k) then begin
                             mapcoord[i][j] := 3;
                         end else begin
-                            mapcoord[i][j] := 1;
+                            mapcoord[i][j] := 0;
                         end;
-                    end else if (maptype = 5) then begin
-                        mapcoord[i][j] := 0;
-                    end
-                    else begin
-                        mapcoord[i][j] := 0;
-                    end;}
+                    end else begin
+                        mapcoord[i][j] := maptype;
+                    end;
 
-                    mapcoord[i][j] := maptype; 
+                    //mapcoord[i][j] := maptype;
 
                 end;
             end;

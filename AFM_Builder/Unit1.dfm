@@ -30,13 +30,13 @@ object Form1: TForm1
     Top = 8
     Width = 143
     Height = 26
-    Caption = 'Advanced Fusion Map Maker. Version 1.40'
+    Caption = 'Advanced Fusion Map Maker. Version 1.50'
     WordWrap = True
   end
   object Label3: TLabel
     Left = 184
     Top = 144
-    Width = 73
+    Width = 61
     Height = 26
     Caption = 'Created By:  Alex Kreuz'
     WordWrap = True

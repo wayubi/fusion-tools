@@ -1,6 +1,7 @@
 ==================================|
 Fusion AFM/AF2 Map Maker Changelog|
 ==================================|
+- 09-06-04: Updated water_db uploaded. [Tsusai]
 - 09-06-04: force_4-1 added, possible kRO Arena system starting. [Tsusai]
 - 08-18-04: Added another map (quiz_test). [Tsusai]
 - 07-07-04: Added new map line (7-5-04 kRO), updated window position to be seen (1.64). [Tsusai]

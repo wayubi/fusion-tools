@@ -1,4 +1,5 @@
 --------------------------------------------------------------------------------
  eAthena -> Fusion Converter 1.000
 --------------------------------------------------------------------------------
+- 2004-05-20: Completed reading of athena.txt into memory array. [AlexKreuz]
 - 2004-05-20: Completed reading of account.txt into memory array. [AlexKreuz]

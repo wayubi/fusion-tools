@@ -30,7 +30,7 @@ object Form1: TForm1
     Top = 8
     Width = 143
     Height = 26
-    Caption = 'Advanced Fusion Map Maker. Version 1.62'
+    Caption = 'Advanced Fusion Map Maker. Version 1.63'
     WordWrap = True
   end
   object Label3: TLabel

@@ -1,7 +1,7 @@
 ==================================|
 Fusion AFM/AF2 Map Maker Changelog|
 ==================================|
-
+- 07-03-04: Ordead a02 a03 GATs are missing. Please check if Gats exist before linking 1.63. [AlexKreuz]
 - 07-03-04: Commented out some unneeded maps (i.e. not in use) version 1.62 [Tsusai]
 - 06-27-04: Added commands to copy needed .gat's into serverside gat's for processing. [Tsusai]
 - 06-27-04: Changelog added. [Tsusai]

@@ -173,18 +173,21 @@ CopyFile(PChar('map\aldeg_cas01.gat'), PChar('map\nguild_alde.gat'),True);
 CopyFile(PChar('map\gefg_cas01.gat'), PChar('map\nguild_gef.gat'),True);
 CopyFile(PChar('map\payg_cas01.gat'), PChar('map\nguild_pay.gat'),True);
 CopyFile(PChar('map\prtg_cas01.gat'), PChar('map\nguild_prt.gat'),True);
+
+{ Alex: a03 and a04 GAT files do not exist. I am using the GND matchup }
 CopyFile(PChar('map\ordeal_a00.gat'), PChar('map\ordeal_1-1.gat'),True);
-CopyFile(PChar('map\ordeal_a02.gat'), PChar('map\ordeal_1-2.gat'),True);
-CopyFile(PChar('map\ordeal_a03.gat'), PChar('map\ordeal_1-3.gat'),True);
-CopyFile(PChar('map\ordeal_a04.gat'), PChar('map\ordeal_1-4.gat'),True);
 CopyFile(PChar('map\ordeal_a00.gat'), PChar('map\ordeal_2-1.gat'),True);
-CopyFile(PChar('map\ordeal_a02.gat'), PChar('map\ordeal_2-2.gat'),True);
-CopyFile(PChar('map\ordeal_a03.gat'), PChar('map\ordeal_2-3.gat'),True);
-CopyFile(PChar('map\ordeal_a04.gat'), PChar('map\ordeal_2-4.gat'),True);
 CopyFile(PChar('map\ordeal_a00.gat'), PChar('map\ordeal_3-1.gat'),True);
+CopyFile(PChar('map\ordeal_a02.gat'), PChar('map\ordeal_1-2.gat'),True);
+CopyFile(PChar('map\ordeal_a02.gat'), PChar('map\ordeal_2-2.gat'),True);
 CopyFile(PChar('map\ordeal_a02.gat'), PChar('map\ordeal_3-2.gat'),True);
-CopyFile(PChar('map\ordeal_a03.gat'), PChar('map\ordeal_3-3.gat'),True);
-CopyFile(PChar('map\ordeal_a04.gat'), PChar('map\ordeal_3-4.gat'),True);
+CopyFile(PChar('map\ordeal_a00.gat'), PChar('map\ordeal_1-3.gat'),True);
+CopyFile(PChar('map\ordeal_a00.gat'), PChar('map\ordeal_2-3.gat'),True);
+CopyFile(PChar('map\ordeal_a00.gat'), PChar('map\ordeal_3-3.gat'),True);
+CopyFile(PChar('map\ordeal_a02.gat'), PChar('map\ordeal_1-4.gat'),True);
+CopyFile(PChar('map\ordeal_a02.gat'), PChar('map\ordeal_2-4.gat'),True);
+CopyFile(PChar('map\ordeal_a02.gat'), PChar('map\ordeal_3-4.gat'),True);
+
 CopyFile(PChar('map\job_priest.gat'), PChar('map\priest_1-1.gat'),True);
 CopyFile(PChar('map\job_priest.gat'), PChar('map\priest_2-1.gat'),True);
 CopyFile(PChar('map\job_priest.gat'), PChar('map\priest_3-1.gat'),True);

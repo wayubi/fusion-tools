@@ -1,6 +1,7 @@
 --------------------------------------------------------------------------------
  eAthena -> Fusion Converter 1.000
 --------------------------------------------------------------------------------
+- 2004-07-18: Created player.txt from account.txt, athena.txt and storage.txt. [Trihan]
 - 2004-05-25: Completed reading of pet.txt into memory array. [AlexKreuz]
 - 2004-05-25: Completed reading of storage.txt into memory array. [AlexKreuz]
 - 2004-05-21: Completed reading of guild.txt into memory array. [AlexKreuz]

@@ -1,0 +1,8 @@
+==================================|
+Fusion AFM/AF2 Map Maker Changelog|
+==================================|
+
+- 06-27-04: Added commands to copy needed .gat's into serverside gat's for processing. [Tsusai]
+- 06-27-04: Changelog added. [Tsusai]
+- Unknown: Colus adds some water stuff (i think)
+- Unknown: Created by Alexkreuz

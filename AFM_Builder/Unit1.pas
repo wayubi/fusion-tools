@@ -94,7 +94,6 @@ var
         tw          :TWater;
 
 begin
-
     MapList := TStringList.Create;
     sl := TStringList.Create;
     AppPath := GetCurrentDir;
@@ -127,7 +126,79 @@ begin
       end;
 
     end;
-
+    //Copies the needed files to create the needed server maps (tsusai)
+        CopyFile(PChar('map\pvp_room.gat'), PChar('map\pvp_y_room.gat'),True);
+        CopyFile(PChar('map\pvp_room.gat'), PChar('map\pvp_n_room.gat'),True);
+        CopyFile(PChar('map\prontera.gat'), PChar('map\pvp_y_1-1.gat'),True);
+        CopyFile(PChar('map\prontera.gat'), PChar('map\pvp_y_2-1.gat'),True);
+        CopyFile(PChar('map\prontera.gat'), PChar('map\pvp_y_3-1.gat'),True);
+        CopyFile(PChar('map\prontera.gat'), PChar('map\pvp_y_4-1.gat'),True);
+        CopyFile(PChar('map\prontera.gat'), PChar('map\pvp_y_5-1.gat'),True);
+        CopyFile(PChar('map\izlude.gat'), PChar('map\pvp_y_1-2.gat'),True);
+        CopyFile(PChar('map\izlude.gat'), PChar('map\pvp_y_2-2.gat'),True);
+        CopyFile(PChar('map\izlude.gat'), PChar('map\pvp_y_3-2.gat'),True);
+        CopyFile(PChar('map\izlude.gat'), PChar('map\pvp_y_4-2.gat'),True);
+        CopyFile(PChar('map\izlude.gat'), PChar('map\pvp_y_5-2.gat'),True);
+        CopyFile(PChar('map\payon.gat'), PChar('map\pvp_y_1-3.gat'),True);
+        CopyFile(PChar('map\payon.gat'), PChar('map\pvp_y_2-3.gat'),True);
+        CopyFile(PChar('map\payon.gat'), PChar('map\pvp_y_3-3.gat'),True);
+        CopyFile(PChar('map\payon.gat'), PChar('map\pvp_y_4-3.gat'),True);
+        CopyFile(PChar('map\payon.gat'), PChar('map\pvp_y_5-3.gat'),True);
+        CopyFile(PChar('map\alberta.gat'), PChar('map\pvp_y_1-4.gat'),True);
+        CopyFile(PChar('map\alberta.gat'), PChar('map\pvp_y_2-4.gat'),True);
+        CopyFile(PChar('map\alberta.gat'), PChar('map\pvp_y_3-4.gat'),True);
+        CopyFile(PChar('map\alberta.gat'), PChar('map\pvp_y_4-4.gat'),True);
+        CopyFile(PChar('map\alberta.gat'), PChar('map\pvp_y_5-4.gat'),True);
+        CopyFile(PChar('map\morocc.gat'), PChar('map\pvp_y_1-5.gat'),True);
+        CopyFile(PChar('map\morocc.gat'), PChar('map\pvp_y_2-5.gat'),True);
+        CopyFile(PChar('map\morocc.gat'), PChar('map\pvp_y_3-5.gat'),True);
+        CopyFile(PChar('map\morocc.gat'), PChar('map\pvp_y_4-5.gat'),True);
+        CopyFile(PChar('map\morocc.gat'), PChar('map\pvp_y_5-5.gat'),True);
+        CopyFile(PChar('map\prt_maze02.gat'), PChar('map\pvp_n_1-1.gat'),True);
+        CopyFile(PChar('map\prt_maze02.gat'), PChar('map\pvp_n_2-1.gat'),True);
+        CopyFile(PChar('map\prt_maze02.gat'), PChar('map\pvp_n_3-1.gat'),True);
+        CopyFile(PChar('map\prt_maze02.gat'), PChar('map\pvp_n_4-1.gat'),True);
+        CopyFile(PChar('map\prt_maze02.gat'), PChar('map\pvp_n_5-1.gat'),True);
+        CopyFile(PChar('map\job_hunter.gat'), PChar('map\pvp_n_1-2.gat'),True);
+        CopyFile(PChar('map\job_hunter.gat'), PChar('map\pvp_n_2-2.gat'),True);
+        CopyFile(PChar('map\job_hunter.gat'), PChar('map\pvp_n_3-2.gat'),True);
+        CopyFile(PChar('map\job_hunter.gat'), PChar('map\pvp_n_4-2.gat'),True);
+        CopyFile(PChar('map\job_hunter.gat'), PChar('map\pvp_n_5-2.gat'),True);
+        CopyFile(PChar('map\job_wizard.gat'), PChar('map\pvp_n_1-3.gat'),True);
+        CopyFile(PChar('map\job_wizard.gat'), PChar('map\pvp_n_2-3.gat'),True);
+        CopyFile(PChar('map\job_wizard.gat'), PChar('map\pvp_n_3-3.gat'),True);
+        CopyFile(PChar('map\job_wizard.gat'), PChar('map\pvp_n_4-3.gat'),True);
+        CopyFile(PChar('map\job_wizard.gat'), PChar('map\pvp_n_5-3.gat'),True);
+        CopyFile(PChar('map\job_priest.gat'), PChar('map\pvp_n_1-4.gat'),True);
+        CopyFile(PChar('map\job_priest.gat'), PChar('map\pvp_n_2-4.gat'),True);
+        CopyFile(PChar('map\job_priest.gat'), PChar('map\pvp_n_3-4.gat'),True);
+        CopyFile(PChar('map\job_priest.gat'), PChar('map\pvp_n_4-4.gat'),True);
+        CopyFile(PChar('map\job_priest.gat'), PChar('map\pvp_n_5-4.gat'),True);
+        CopyFile(PChar('map\job_knight.gat'), PChar('map\pvp_n_1-5.gat'),True);
+        CopyFile(PChar('map\job_knight.gat'), PChar('map\pvp_n_2-5.gat'),True);
+        CopyFile(PChar('map\job_knight.gat'), PChar('map\pvp_n_3-5.gat'),True);
+        CopyFile(PChar('map\job_knight.gat'), PChar('map\pvp_n_4-5.gat'),True);
+        CopyFile(PChar('map\job_knight.gat'), PChar('map\pvp_n_5-5.gat'),True);
+        CopyFile(PChar('map\job_sword1.gat'), PChar('map\sword_1-1.gat'),True);
+        CopyFile(PChar('map\job_sword1.gat'), PChar('map\sword_2-1.gat'),True);
+        CopyFile(PChar('map\job_sword1.gat'), PChar('map\sword_3-1.gat'),True);
+        CopyFile(PChar('map\force_map1.gat'), PChar('map\force_1-1.gat'),True);
+        CopyFile(PChar('map\force_map2.gat'), PChar('map\force_1-2.gat'),True);
+        CopyFile(PChar('map\force_map3.gat'), PChar('map\force_1-3.gat'),True);
+        CopyFile(PChar('map\force_map1.gat'), PChar('map\force_2-1.gat'),True);
+        CopyFile(PChar('map\force_map2.gat'), PChar('map\force_2-2.gat'),True);
+        CopyFile(PChar('map\force_map3.gat'), PChar('map\force_2-3.gat'),True);
+        CopyFile(PChar('map\force_map1.gat'), PChar('map\force_3-1.gat'),True);
+        CopyFile(PChar('map\force_map2.gat'), PChar('map\force_3-2.gat'),True);
+        CopyFile(PChar('map\force_map3.gat'), PChar('map\force_3-3.gat'),True);
+        CopyFile(PChar('map\gefg_cas01.gat'), PChar('map\nguild_gef.gat'),True);
+        CopyFile(PChar('map\prtg_cas01.gat'), PChar('map\nguild_prt.gat'),True);
+        CopyFile(PChar('map\payg_cas01.gat'), PChar('map\nguild_pay.gat'),True);
+        CopyFile(PChar('map\aldeg_cas01.gat'), PChar('map\nguild_alde.gat'),True);
+        CopyFile(PChar('map\new_zone01.gat'), PChar('map\new_1-1.gat'),True);
+        CopyFile(PChar('map\new_zone02.gat'), PChar('map\new_2-1.gat'),True);
+        CopyFile(PChar('map\new_zone03.gat'), PChar('map\new_3-1.gat'),True);
+        CopyFile(PChar('map\new_zone04.gat'), PChar('map\new_4-1.gat'),True);
     if FindFirst('map\*.gat', $27, sr) = 0 then begin
 		repeat
             dat := TMemoryStream.Create;

@@ -1,10 +1,10 @@
 object Form1: TForm1
-  Left = 408
-  Top = 460
+  Left = 770
+  Top = 523
   BorderStyle = bsDialog
   Caption = 'Advanced Fusion Map Maker'
-  ClientHeight = 146
-  ClientWidth = 266
+  ClientHeight = 179
+  ClientWidth = 248
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -30,12 +30,12 @@ object Form1: TForm1
     Top = 8
     Width = 143
     Height = 26
-    Caption = 'Advanced Fusion Map Maker. Version 1.20'
+    Caption = 'Advanced Fusion Map Maker. Version 1.30'
     WordWrap = True
   end
   object Label3: TLabel
-    Left = 176
-    Top = 128
+    Left = 192
+    Top = 160
     Width = 50
     Height = 13
     Caption = 'Alex Kreuz'
@@ -56,5 +56,21 @@ object Form1: TForm1
     Height = 17
     Caption = 'Debug Output Stats'
     TabOrder = 1
+  end
+  object CheckBox2: TCheckBox
+    Left = 8
+    Top = 128
+    Width = 97
+    Height = 17
+    Caption = 'AFM Format'
+    TabOrder = 2
+  end
+  object CheckBox3: TCheckBox
+    Left = 8
+    Top = 152
+    Width = 97
+    Height = 17
+    Caption = 'AF2 Format'
+    TabOrder = 3
   end
 end

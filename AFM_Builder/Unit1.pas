@@ -43,6 +43,8 @@ type TForm1 = class(TForm)
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
+    CheckBox2: TCheckBox;
+    CheckBox3: TCheckBox;
     procedure Button1Click(Sender: TObject);
 end;
 
@@ -74,6 +76,7 @@ var
 
         FWM         :TextFile;
         OUT         :TextFile;
+        AF2         :TextFile;
 
         zipfile     :TZip;
         path        :string;
@@ -99,8 +102,6 @@ begin
 
             str  := StringReplace(sr.Name, '.gat', '',[rfReplaceAll, rfIgnoreCase]);
 
-            //SetLength(mapcoord, xy.X, xy.Y);
-
             for j := 0 to xy.Y - 1 do begin
                 for i := 0 to xy.X - 1 do begin
 
@@ -118,6 +119,9 @@ begin
                         end;
                     end else if (maptype = 5) then begin
                         mapcoord[i][j] := 0;
+                    end
+                    else begin
+                        mapcoord[i][j] := 0;
                     end;
 
                 end;
@@ -125,12 +129,23 @@ begin
 
             dat.Free;
 
-            AssignFile(FWM, 'afm/'+str+'.afm');
-            ReWrite(FWM);
-            WriteLn(FWM, 'ADVANCED FUSION MAP');
-            WriteLn(FWM, str);
-            WriteLn(FWM, inttostr(xy.X)+' '+inttostr(xy.Y));
-            WriteLn(FWM);
+            if checkbox2.checked then begin
+                AssignFile(FWM, 'afm/'+str+'.afm');
+                ReWrite(FWM);
+                WriteLn(FWM, 'ADVANCED FUSION MAP');
+                WriteLn(FWM, str);
+                WriteLn(FWM, inttostr(xy.X)+' '+inttostr(xy.Y));
+                WriteLn(FWM);
+            end;
+
+            if checkbox3.checked then begin
+                AssignFile(AF2, 'afm/'+str+'.out');
+                ReWrite(AF2);
+                WriteLn(AF2, 'ADVANCED FUSION MAP');
+                WriteLn(AF2, str);
+                WriteLn(AF2, inttostr(xy.X)+' '+inttostr(xy.Y));
+                WriteLn(AF2);
+            end;
 
             if checkbox1.Checked then begin
                 AssignFile(OUT, 'afm/debug-'+str+'.txt');
@@ -141,26 +156,62 @@ begin
             for j := 0 to xy.Y - 1 do begin
                 for i := 0 to xy.X - 1 do begin
 
-                    Write(FWM, mapcoord[i][j]);
+                    if checkbox2.checked then begin
+                        Write(FWM, mapcoord[i][j]);
+                    end;
+
+                    if checkbox3.checked then begin
+                        Write(AF2, mapcoord[i][j]);
+                    end;
 
                     if checkbox1.Checked then begin
                         WriteLn(OUT, '('+inttostr(i)+','+inttostr(j)+') ['+inttostr(mapcoord[i][j])+']');
                     end;
 
                 end;
-                WriteLn(FWM);
+                if checkbox2.checked then begin
+                    WriteLn(FWM);
+                end;
+                if checkbox3.checked then begin
+                    WriteLn(AF2);
+                end;
             end;
 
-            CloseFile(FWM);
-            if checkbox1.Checked then CloseFile(OUT);
+            if checkbox2.checked then begin
+                CloseFile(FWM);
+            end;
 
-            label1.Caption := 'Conversion Complete';
+            if checkbox3.checked then begin
+                CloseFile(AF2);
+            end;
+
+            if checkbox1.Checked then begin
+                CloseFile(OUT);
+            end;
+
+            if checkbox3.checked then begin
+                deletefile(AppPath+'\afm\'+str+'.af2');
+
+                zipfile := tzip.create(self);
+                zipfile.Filename := AppPath+'\afm\'+str+'.af2';
+
+                animals := TStringList.Create;
+                animals.Add(AppPath+'\afm\'+str+'.out');
+
+                zipfile.FileSpecList := animals;
+                zipfile.Add;
+                zipfile.Free;
+
+                deletefile(AppPath+'\afm\'+str+'.out');
+
+                animals.Free;
+            end;
 
         until FindNext(sr) <> 0;
 		FindClose(sr);
     end;
 
-    tm.Free;
+    label1.Caption := 'Conversion Complete';
 
 end;
 

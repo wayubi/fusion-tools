@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 770
-  Top = 523
+  Left = 520
+  Top = 666
   BorderStyle = bsDialog
   Caption = 'Advanced Fusion Map Maker'
   ClientHeight = 179
@@ -30,15 +30,16 @@ object Form1: TForm1
     Top = 8
     Width = 143
     Height = 26
-    Caption = 'Advanced Fusion Map Maker. Version 1.30'
+    Caption = 'Advanced Fusion Map Maker. Version 1.40'
     WordWrap = True
   end
   object Label3: TLabel
-    Left = 192
-    Top = 160
-    Width = 50
-    Height = 13
-    Caption = 'Alex Kreuz'
+    Left = 184
+    Top = 144
+    Width = 73
+    Height = 26
+    Caption = 'Created By:  Alex Kreuz'
+    WordWrap = True
   end
   object Button1: TButton
     Left = 8

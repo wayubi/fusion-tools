@@ -111,7 +111,7 @@ begin
                     dat.Read(h[3], 4);
                     dat.Read(maptype, 4);
 
-                    if (maptype = 0) then begin
+                    {if (maptype = 0) then begin
                         if (h[0] > 3) or (h[1] > 3) or (h[2] > 3) or (h[3] > 3) then begin
                             mapcoord[i][j] := 3;
                         end else begin
@@ -122,7 +122,9 @@ begin
                     end
                     else begin
                         mapcoord[i][j] := 0;
-                    end;
+                    end;}
+
+                    mapcoord[i][j] := maptype; 
 
                 end;
             end;
